@@ -1,0 +1,60 @@
+**************Docker Commands*********************
+
+--->docker ps -a
+--->docker pull mongo
+--->docker run -d -p 27017:27017 --name shopping-mongo mongo
+  * shopping-mongo->Conatiner Name
+  * Mongo->Image Name
+--->docker logs -f shopping-mongo
+--->docker exec -it shopping-mongo /bin/bash 
+  * docker exec-Will go inside Docker Container.
+  * bash folder if you want to create bash  scripts.  
+---->Controller Action Return Types
+---->Attribute Definition on controller MethodName
+    *Responsetype should be mentioned on top of the controller method
+----->Update-Package -ProjectName Catalog.API
+----->docker start (ContainerID)
+----->Docker Compose-Multiple Container Defintion
+
+----->Docker File will be Created with the help of visual studio orchestration support.
+       *Creates Docker File,DockerCompose File,Dockercompose Running Profile
+
+----->"DockerFile" from each project are responsible for Extracting the Images from Container
+----->Tools->Options->Search Docker->Container Tools->Docker Compose->Auto Running Image(Turn on/off for Auto Building DockerFile)
+------>"DatabaseSettings:ConnectionString=mongodb://catalogdb:27017"
+      * catalogdb-ContainerName
+------>ports:
+      - "8000:80"
+      *Port Mapping the Container Port Number to Local Port
+------>docker stop [containerID]
+       docker rm [containerID]
+------>docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
+------>catalogdb:
+         container_name: catalogdb
+       services:
+         catalogdb:[above a]
+           image: mongo
+-------> CATALOG.API-> http://localhost:8000/swagger/index.html
+------->docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml down
+------->docker ps -aq
+        docker stop $(docker ps -aq) - Stops all the Image in my local computer
+        docker rm $(docker ps -aq)  - Removes all the Container in my local computer.
+        docker rmi $(docker images -q) - Removes All the Images
+        docker system prune -  Removes Unnamed Images
+        docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
+
+***********************************Docker Hub Mongo Client************************
+---->docker run -d -p 3000:3000 mongoclient/mongoclient
+
+
+        
+
+
+
+
+
+
+
+
+
+
