@@ -4,7 +4,9 @@
 --->docker pull mongo
 --->docker run -d -p 27017:27017 --name shopping-mongo mongo
   * shopping-mongo->Conatiner Name
-  * Mongo->Image Name
+  * mongo->Image Name
+  * d-Detach Mode Works in Background
+  * p-port mapping
 --->docker logs -f shopping-mongo
 --->docker exec -it shopping-mongo /bin/bash 
   * docker exec-Will go inside Docker Container.
@@ -45,6 +47,32 @@
 
 ***********************************Docker Hub Mongo Client************************
 ---->docker run -d -p 3000:3000 mongoclient/mongoclient
+
+
+
+----> docker pull redis
+----> docker run -d -p 6379:6379 --name aspnetrun-redis redis
+      * aspnetrun-redis->Conatiner Name
+      * redis->Image Name
+      * d-Detach Mode Works in Background
+      * p-port mapping
+
+****************For TroubleShooting*******************************************
+----> docker logs -f [conatiner-name] -To Check the Logs
+----> docker exec -it [conatiner-name] /bin/bash 
+      * redis-cli
+         *ping
+         * set name sujith
+         *get name
+----> Redis Cache is Used to Support Distributed Caching-> scalability and performance
+      will be more when it is Hosted on cloud
+
+-----> Install-Package Microsoft.Extensions.Caching.StackExchangeRedis
+-----> Update-Package -ProjectName Basket.API
+
+****************************Routes********************************
+https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-6.0
+
 
 
         
