@@ -21,6 +21,10 @@
 ----->Docker File will be Created with the help of visual studio orchestration support.
        *Creates Docker File,DockerCompose File,Dockercompose Running Profile
 
+----->WORKDIR /app
+      * Destination Folder where the specified soloution files gets copy
+      * if /app exist it will gets copy or it will create 
+      
 ----->"DockerFile" from each project are responsible for Extracting the Images from Container
 ----->Tools->Options->Search Docker->Container Tools->Docker Compose->Auto Running Image(Turn on/off for Auto Building DockerFile)
 ------>"DatabaseSettings:ConnectionString=mongodb://catalogdb:27017"
@@ -73,6 +77,8 @@
 ****************************Routes********************************
 https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnetcore-6.0
 
+------> portainer_data: used to store the User Data
+------> username:admin,password:admin123@#
 
 
         
