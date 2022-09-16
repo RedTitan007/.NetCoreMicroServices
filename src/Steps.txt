@@ -80,6 +80,13 @@ https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnet
 ------> portainer_data: used to store the User Data
 ------> username:admin,password:admin123@#
 
+-----> Install-Package Npgsql
+-----> Install-Package Dapper
+
+-----> BASKET.API http://localhost:8001/swagger/index.html
+-----> DISCOUNT.API http://localhost:8002/swagger/index.html
+       
+
 
         
 
