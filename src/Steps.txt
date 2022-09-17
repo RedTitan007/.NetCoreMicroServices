@@ -86,7 +86,8 @@ https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnet
 
 -----> BASKET.API http://localhost:8001/swagger/index.html
 -----> DISCOUNT.API http://localhost:8002/swagger/index.html
-       
+-----> Update-Package -ProjectName Discount.Grpc
+-----> Install-Package AutoMapper.Extensions.Microsoft.DependencyInjection       
 
 
         
