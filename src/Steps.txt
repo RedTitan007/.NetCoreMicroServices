@@ -48,6 +48,7 @@
         docker rmi $(docker images -q) - Removes All the Images
         docker system prune -  Removes Unnamed Images
         docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
+        docker volume prune--Removes All the Volumes
 
 ***********************************Docker Hub Mongo Client************************
 ---->docker run -d -p 3000:3000 mongoclient/mongoclient
