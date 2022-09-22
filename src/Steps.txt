@@ -48,6 +48,7 @@
         docker rmi $(docker images -q) - Removes All the Images
         docker system prune -  Removes Unnamed Images
         docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up -d
+        docker-compose -f .\docker-compose.yml -f .\docker-compose.override.yml up --build
         docker volume prune--Removes All the Volumes
 
 ***********************************Docker Hub Mongo Client************************
@@ -87,7 +88,13 @@ https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnet
 -----> BASKET.API http://localhost:8001/swagger/index.html
 -----> DISCOUNT.API http://localhost:8002/swagger/index.html
 -----> Update-Package -ProjectName Discount.Grpc
------> Install-Package AutoMapper.Extensions.Microsoft.DependencyInjection       
+-----> Install-Package AutoMapper.Extensions.Microsoft.DependencyInjection      
+-----> - "GrpcSettings:DiscountUrl=discount.grpc"-> discount.grpc is Container Name
+-----> Install-Package MediatR.Extensions.Microsoft.DependencyInjection
+
+
+
+
 
 
         

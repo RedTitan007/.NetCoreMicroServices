@@ -16,6 +16,8 @@ namespace Discount.Grpc
         {
             services.AddScoped<IDiscountRepository, DiscountRepository>();
             services.AddAutoMapper(typeof(Startup));
+            //AutoMapper will scan our application and look for classes that inherit from the Profile class 
+            //    and load their mapping configurations.
             services.AddGrpc();
         }
 
