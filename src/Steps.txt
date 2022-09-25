@@ -91,6 +91,11 @@ https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnet
 -----> Install-Package AutoMapper.Extensions.Microsoft.DependencyInjection      
 -----> - "GrpcSettings:DiscountUrl=discount.grpc"-> discount.grpc is Container Name
 -----> Install-Package MediatR.Extensions.Microsoft.DependencyInjection
+-----> Application Layer Includes
+       - Contracts- Includes Interface,Abstractions
+       - Behaviours- 
+       - Features- Includes Use Case, Business Requirments,CQRS Pattern
+
 
 
 

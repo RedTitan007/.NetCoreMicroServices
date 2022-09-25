@@ -12,7 +12,7 @@ namespace Ordering.Application.Exceptions
         {
             Errors = new Dictionary<string, string[]>();
         }
-
+        //https://stackoverflow.com/questions/68238503/how-can-i-wrap-failed-model-validation-result-of-an-asp-net-core-5-web-api-contr
         public ValidationException(IEnumerable<ValidationFailure> failures)
             : this()
         {
