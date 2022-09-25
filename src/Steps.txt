@@ -95,6 +95,8 @@ https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnet
        - Contracts- Includes Interface,Abstractions
        - Behaviours- 
        - Features- Includes Use Case, Business Requirments,CQRS Pattern
+-----> Install-Package Automapper.Extensions.Microsoft.DependencyInjection
+-----> Install-Package FluentValidation.DependencyInjectionExtensions
 
 
 
