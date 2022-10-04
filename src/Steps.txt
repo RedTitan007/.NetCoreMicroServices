@@ -99,6 +99,13 @@ https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnet
 -----> Install-Package FluentValidation.DependencyInjectionExtensions
 -----> Install-Package Microsoft.EntityFrameworkCore.SqlServer
 
+****************FOR MIGRATION*************************************
+-----> Install-Package Microsoft.EntityFrameworkCore.Tools -v [VERSION NUMBER]
+       * This will Provide to Genarate Migration Folders
+-----> Change the Project in the Package manager Console where u want to create Migration Folders
+-----> Add-Migration InitialCreate[Migration Name] 
+
+
 
 
 
