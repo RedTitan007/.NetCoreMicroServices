@@ -18,7 +18,8 @@ namespace Ordering.Infrastructure
                 options.UseSqlServer(configuration.GetConnectionString("OrderingConnectionString")));
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
-            //Her Typeof is required as Type Convention which is required for 
+            //Her Typeof is required as Type Co
+            //nvention which is required for 
             services.AddScoped<IOrderRepository, OrderRepository>();
 
             services.Configure<EmailSettings>(c => configuration.GetSection("EmailSettings"));
