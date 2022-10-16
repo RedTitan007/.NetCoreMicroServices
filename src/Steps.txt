@@ -128,7 +128,8 @@ password: SwN12345678
       "productName": "IPhone 13"
     }
   ]
-}
+
+}------> http://localhost:15672/#/ Rabit MQ
 
 
 

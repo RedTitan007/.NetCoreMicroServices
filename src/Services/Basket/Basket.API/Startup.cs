@@ -41,6 +41,7 @@ namespace Basket.API
             services.AddScoped<DiscountGrpcService>();
 
             // MassTransit-RabbitMQ Configuration which is used to connect RabitMq
+            //Provide RabbitMq as message broker to MassTransit
             services.AddMassTransit(config => {
                 config.UsingRabbitMq((ctx, cfg) => {
                     cfg.Host(Configuration["EventBusSettings:HostAddress"]);
