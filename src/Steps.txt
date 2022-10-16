@@ -106,7 +106,29 @@ https://docs.microsoft.com/en-us/aspnet/core/mvc/controllers/routing?view=aspnet
 -----> Add-Migration InitialCreate[Migration Name] 
 
 
+**********************CONNECTING TO ORDER DB*************************************
+Server:localhsot, 1433
+userid: sa
+password: SwN12345678
+*********************************************************************************
 
+-----> Install-Package MassTransit
+-----> Install-Package MassTransit.RabbitMQ
+-----> Install-Package MassTransit.AspNetCore
+-----> Update-Package -ProjectName Basket.API
+
+{
+  "userName": "swn",
+  "items": [
+    {
+      "quantity": 2,
+      "color": "Blue",
+      "price": 500,
+      "productId": "60210c2a1556459e153f0554",
+      "productName": "IPhone 13"
+    }
+  ]
+}
 
 
 

@@ -1,6 +1,7 @@
 using Basket.API.GrpcServices;
 using Basket.API.Repositories;
 using Discount.Grpc.Protos;
+using MassTransit;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -8,6 +9,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using System;
+using static MassTransit.MessageHeaders;
+using System.ComponentModel;
 
 namespace Basket.API
 {
@@ -28,12 +31,23 @@ namespace Basket.API
                 options.Configuration = Configuration.GetValue<string>("CacheSettings:ConnectionString");
             });//Registering the redis services and
                //providing the Server details and Establishing Connection to use Idistributedcache
+           
             services.AddScoped<IBasketRepository,BasketRepository>();
+            services.AddAutoMapper(typeof(Startup));//Type of Same Assembly Basket.API and looks for Classes which inherited Profile
 
-            // Grpc Configuration
+            // Grpc Configuration Synch service communication
             services.AddGrpcClient<DiscountProtoService.DiscountProtoServiceClient>
                         (o => o.Address = new Uri(Configuration["GrpcSettings:DiscountUrl"]));
             services.AddScoped<DiscountGrpcService>();
+
+            // MassTransit-RabbitMQ Configuration which is used to connect RabitMq
+            services.AddMassTransit(config => {
+                config.UsingRabbitMq((ctx, cfg) => {
+                    cfg.Host(Configuration["EventBusSettings:HostAddress"]);
+                });
+            });
+            //Deprecated, hosted service is automatically added to the container
+            //services.AddMassTransitHostedService();
 
             services.AddControllers();
             services.AddSwaggerGen(c =>

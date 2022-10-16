@@ -13,7 +13,7 @@ namespace Ordering.API.Extensions
         //Creating Extension Method
         public static IHost MigrateDatabase<TContext>(this IHost host, Action<TContext, IServiceProvider> seeder) where TContext : DbContext
         {
-            using (var scope = host.Services.CreateScope())
+            using ( var scope = host.Services.CreateScope())
             {
                 var services = scope.ServiceProvider;
                 var logger = services.GetRequiredService<ILogger<TContext>>();
@@ -51,8 +51,14 @@ namespace Ordering.API.Extensions
         private static void InvokeSeeder<TContext>(Action<TContext, IServiceProvider> seeder, TContext context, IServiceProvider services)
             where TContext : DbContext
         {
-            context.Database.Migrate();//Migration
-            seeder(context, services);//After Migration Sucess Seeding the Data into Table to Create REcords
-        }
+            try
+            {
+                context.Database.Migrate();//Migration
+                seeder(context, services);//After Migration Sucess Seeding the Data into Table to Create REcords
+            }
+            catch (Exception ex) {
+                Console.WriteLine(ex);
+            }
+            }
     }
 }
